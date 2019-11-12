@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "rimraf dist && node build/build.js --env dev",
+    "build:dev": "node build/build.js --env dev",
     "start:dev": "node build/server.js --env dev"
   },
   "keywords": [],

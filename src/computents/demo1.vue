@@ -10,7 +10,7 @@ export default {
   },
   render() {
     return(
-       <div class='a'>组件测试2</div>
+       <div class='a'>组件测试21111</div>
     )
   },
   mounted () {
