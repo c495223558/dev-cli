@@ -28,9 +28,9 @@ module.exports = function () {
       {
         test:/\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
-        options: {
-          limit: 8192
-        },
+        // options: {
+        //   limit: 8192
+        // },
          exclude: /node_modules/,
         include: path.resolve(__dirname, '../src')
       },

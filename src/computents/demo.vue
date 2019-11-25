@@ -1,24 +1,19 @@
 <script>
-// import vuex from 'vuex'
 export default {
   name: 'demo',
-  props: {
-    id: {
-      type: Number,
-      default: 1
-    }
-  },
   render() {
-    return(
-       <div class='a'>组件测试</div>
-    )
+    return{}
   },
-  mounted () {
+  methods: {
+    handleclick(){
+      // 自定义代码
+    }
   }
 }
 </script>
-<style lang="less">
+<style lang="scss">
   .a{
     border-bottom: 1px solid red;
+    background: url('../assets/images/aaa.jpg')
   }
 </style>
