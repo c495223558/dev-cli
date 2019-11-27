@@ -1,19 +1,15 @@
+<template>
+  <div>
+    <el-button type="primary" @click="handleclick">测试按钮</el-button>
+  </div>
+</template>
 <script>
 export default {
-  name: 'demo',
-  render() {
-    return{}
-  },
+  name:'demo2',
   methods: {
     handleclick(){
-      // 自定义代码
+      alert(1)
     }
   }
 }
 </script>
-<style lang="scss">
-  .a{
-    border-bottom: 1px solid red;
-    background: url('../assets/images/aaa.jpg')
-  }
-</style>
