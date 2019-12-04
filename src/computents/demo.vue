@@ -4,8 +4,10 @@
   </div>
 </template>
 <script>
+
 export default {
-  name:'demo2',
+  name:'parentPage',
+  inject:['parentPage'],
   methods: {
     handleclick(){
       alert(1)
