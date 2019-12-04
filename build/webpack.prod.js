@@ -12,8 +12,11 @@ module.exports = (filename) => {
         [filename]: '../entry/index.js'
       }
     },
-    mode: 'production',
-    // devtool: 'inline-source-map',
+    output:{
+      libraryTarget: 'amd'
+    },  
+    mode: 'development',
+    devtool: 'inline-source-map',
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
