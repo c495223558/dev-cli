@@ -2,6 +2,8 @@
 
 node_modules/
 dist/
+src/
+
 
 # 错误日志
 npm-debug.log
