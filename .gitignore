@@ -2,7 +2,7 @@
 
 node_modules/
 dist/
-src/
+src/computents/
 
 
 # 错误日志
