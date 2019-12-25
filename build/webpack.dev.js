@@ -2,7 +2,8 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-console.log(__dirname)
+const copyWebpackPlugin = require('copy-webpack-plugin');
+const path =require('path')
 module.exports = (filename) => {
   return merge(common(),  {
     mode: 'development',
@@ -13,18 +14,24 @@ module.exports = (filename) => {
     },
     devtool: 'source-map',
     devServer: {
-      contentBase: "./dist",
+      contentBase: "/",
+      publicPath:"/"
     },
     plugins:[
-       new HtmlWebpackPlugin({
-         title: '管理输出',
-         template: '../src/index.html'
-       }),
-       new webpack.DefinePlugin({
+      new webpack.DefinePlugin({
         'process.env': {
-          FILE_NAME: JSON.stringify(filename)
+          FILE_NAME: JSON.stringify(filename),
+          BASE_URL:"'/'"
         }
-      })
+      }),
+      new HtmlWebpackPlugin({
+        title: '管理输出',
+        template: '../public/index.html'
+      }),
+      new copyWebpackPlugin([{
+        from: path.join(__dirname,'../public'),
+        to:path.join(__dirname,'../dist')
+      }])
     ]
   });
 }
