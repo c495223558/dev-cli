@@ -4,10 +4,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const path =require('path')
+const argv = process.argv;
+let public;
 module.exports = (filename) => {
-  return merge(common(),  {
+  // 当运行的是移动端的时候添加postcss的配置
+  public = common();
+  if(argv[4] === '_phone') {
+    public.module.rules.forEach(val => {
+      let temp = val.test + '';
+      if(temp.indexOf('.css') !== -1 || temp.indexOf('.scss') !== -1 || temp.indexOf('.less') !== -1) {
+        val.use.push({loader: "postcss-loader"})
+      }
+    })
+  }
+  return merge(public,  {
     mode: 'development',
     entry: () => {
+      if(argv[4] === '_phone'){
+        return {
+          entry: '../entry/app.js'
+        }
+      }
       return {
        entry: '../entry/dev.js'
       }

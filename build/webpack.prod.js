@@ -5,8 +5,19 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const argv = process.argv;
+let public;
 module.exports = (filename) => {
-  return merge(common(), {
+  public = common();
+  if(argv[4] === '_phone') {
+    public.module.rules.forEach(val => {
+      let temp = val.test + '';
+      if(temp.indexOf('.css') !== -1 || temp.indexOf('.scss') !== -1 || temp.indexOf('.less') !== -1) {
+        val.use.push({loader: "postcss-loader"})
+      }
+    })
+  }
+  return merge(public, {
     entry: () => {
       return {
         [filename]: '../entry/index.js'

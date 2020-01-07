@@ -2,7 +2,8 @@ const argv = process.argv
 const Filename = argv[argv.length-1]
 const chalk = require('chalk')
 // 定义参数配置
-if(argv.length!==5){
+console.log(argv[4]);
+if(argv.length!==5 && argv[4] !== '_phone'){
   console.log(chalk.red('打包命令中必须包含组件名称'))
   return
 }
