@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const path =require('path')
 const argv = process.argv;
+console.log(argv)
 let public;
 module.exports = (filename) => {
   // 当运行的是移动端的时候添加postcss的配置

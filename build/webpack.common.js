@@ -67,7 +67,7 @@ module.exports = function () {
     externals:[
       {
         vue: 'Vue',//  window.Vue  
-        // vant:'vant',
+        vant:'vant',
         axios:'axios',// value:window.axios  key:  import axios form 'axiso'
         vuex:'vuex',
         'element-ui':'Element'
