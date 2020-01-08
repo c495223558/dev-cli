@@ -1,8 +1,6 @@
 .DS_Store
-
 node_modules/
 dist/
-
 
 # 错误日志
 npm-debug.log
