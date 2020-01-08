@@ -1,7 +1,8 @@
 .DS_Store
 
 node_modules/
-dist/
+dist/ 
+src/mixins/
 
 # 错误日志
 npm-debug.log
