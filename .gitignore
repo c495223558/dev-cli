@@ -2,7 +2,6 @@
 
 node_modules/
 dist/
-src/computents/
 
 # 错误日志
 npm-debug.log
@@ -14,5 +13,4 @@ yarn-error.log
 *.ntvs*
 *.njsproj
 *.sln
-*.vue
 
