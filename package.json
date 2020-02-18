@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "node build/build.js --env dev",
+    "build:dev": "rm -rf dist && node build/build.js --env dev",
+    "build:customer": "node build/customer-build.js --env dev",
     "buildbtn:dev": "node build/buildbtn.js --env dev",
     "start:dev": "node build/server.js --env dev",
     "build:app": "node build/app.js --env dev _phone",
