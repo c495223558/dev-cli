@@ -1,6 +1,6 @@
 <template>
 	<iframe
-		src="https://ba-bi.mamcharge.com/public/question/daf6ba57-2283-4823-9a90-27a28c8b6f3d"
+		src="https://ba-bi.mamcharge.com/public/dashboard/072acc8d-62f1-4e6b-93a3-794e5a61b1fc"
 		height="100%"
 		width="100%"
 		name="ba-bi"

@@ -1,5 +1,5 @@
 #### 所有的自定义组件 按钮  页面 
-- 都需要新建在 src/computents 目录下
+- 都需要新建在 src/component 目录下
 
 #### 测试环境打包（demo组件）
 ```
@@ -19,3 +19,6 @@ npm run build:customer customer
 
 #### config 目录下为后台接口地址配置
 - dev.env.js里的全局变量为接口地址
+
+#### config/dev.env.js
+> 可注入全局环境变量
