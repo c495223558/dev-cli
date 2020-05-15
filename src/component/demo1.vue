@@ -1,30 +1,71 @@
 <template>
-	<div>
-		<template v-if="searchType == 'form'">我是表单中的自定义组件</template>
-		<template v-else-if="searchType == 'table'">我是子表中的自定义组件</template>
-		<template v-else-if="searchType == 'searchType'">我是查询条件中的自定义组件</template>
-		<el-table-column
-			v-if="searchType == 'details'"
-			:prop="dataInfo.model"
-			:label="dataInfo.columnComment"
-			:width="dataInfo.options.width===''?'auto':dataInfo.options.width"
-		>
-			<template>我是列表中的自定义组件</template>
-		</el-table-column>
-	</div>
+  <div id="app">
+    <dragTreeTable :data="treeData" :onDrag="onTreeDataChange"></dragTreeTable>
+  </div>
 </template>
+
 <script>
+import dragTreeTable from '@/assets/js/dtree-table'
+import demoDataList from '@/assets/js/data'
 export default {
-	name: 'chzujian1',
-	props: {
-		dataInfo: {
-			type: Object,
-			default: {}
-		},
-		searchType: {
-			type: String,
-			default: 'form'
-		}
-	}
+  name: 'app',
+  data() {
+    return {
+      treeData: {
+        columns: [],
+        lists: []
+      }
+    }
+  },
+  components: {
+    dragTreeTable
+  },
+  methods: {
+    onTreeDataChange(list) {
+      console.log(list)
+      this.treeData.lists = list
+    }
+  },
+  mounted() {
+    var columns = [
+      {
+        type: 'checkbox',
+        width: 100,
+        align: 'center',
+        isContainChildren: true
+      },
+      {
+        type: 'selection',
+        title: '菜单名称',
+        field: 'name',
+        width: 200,
+        align: 'left',
+        titleAlign: 'left',
+        formatter: item => {
+          return '<span>' + item.name + '</span>'
+        }
+      },
+
+      {
+        title: '链接',
+        field: 'uri',
+        width: 200,
+        align: 'center'
+      },
+      {
+        title: '父ID',
+        field: 'parent_id',
+        width: 150,
+        align: 'center'
+      }
+    ]
+    this.treeData = {
+      columns: columns,
+      lists: demoDataList
+    }
+  }
 }
 </script>
+
+<style lang="scss">
+</style>

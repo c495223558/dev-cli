@@ -44,6 +44,7 @@
     "yargs": "^14.2.0"
   },
   "dependencies": {
+    "js-cookie": "^2.2.1",
     "lib-flexible": "^0.3.2",
     "postcss-loader": "^3.0.0",
     "postcss-pxtorem": "^4.0.1"
