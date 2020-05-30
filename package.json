@@ -9,6 +9,7 @@
     "build:prod": "rm -rf dist && node build/build.js --env prod",
     "build:customer": "node build/customer-build.js --env dev",
     "buildbtn:dev": "node build/buildbtn.js --env dev",
+    "buildcolums:dev": "rm -rf dist && node build/colums.js --env dev",
     "start:dev": "node build/server.js --env dev",
     "build:app": "node build/app.js --env dev _phone",
     "start:app": "node build/serverapp.js --env dev _phone"
@@ -28,6 +29,7 @@
     "exports-loader": "^0.7.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^7.1.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "node-sass": "^4.13.0",

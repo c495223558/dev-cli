@@ -1,3 +1,12 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-04-13 15:59:22
+ * @LastEditTime: 2020-05-30 15:07:29
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /dev-cli/README.md
+-->
+
 #### 所有的自定义组件 按钮 页面
 
 - 都需要新建在 src/component 目录下
@@ -28,3 +37,11 @@ npm run build:customer customer
 #### config/dev.env.js
 
 > 可注入全局环境变量
+
+#### 测试环境自定义列打包
+
+- 所有的自定义列都要新建在 src/customColums 目录下
+- 一级为文件夹
+- 二级为自定义列文件
+- 打包命令 npm run buildcolums:dev
+- shell 终端中按照提示选择打包文件
